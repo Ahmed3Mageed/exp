@@ -1,0 +1,60 @@
+{
+  "charts": [
+    {
+      "chart_name": "Expense by Category",
+      "label": "Expense Distribution by Category"
+    }
+  ],
+  "content": [
+    {
+      "label": "Transactions",
+      "items": [
+        {
+          "label": "Expense Entry",
+          "link_to": "Expense Entry",
+          "type": "doctype"
+        }
+      ]
+    },
+    {
+      "label": "Masters",
+      "items": [
+        {
+          "label": "Expense Type",
+          "link_to": "Expense Type",
+          "type": "doctype"
+        },
+        {
+          "label": "Expense Category",
+          "link_to": "Expense Category",
+          "type": "doctype"
+        }
+      ]
+    },
+    {
+      "label": "Reports",
+      "items": [
+        {
+          "label": "Expense Analysis",
+          "link_to": "Expense Analysis",
+          "type": "report"
+        },
+        {
+          "label": "Budget vs Actual",
+          "link_to": "Budget vs Actual",
+          "type": "report"
+        }
+      ]
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "Grey",
+      "format": "{} Open",
+      "label": "Expense Entry",
+      "link_to": "Expense Entry",
+      "stats_filter": "{\\"status\\": [\\"=\\", \\"Open\\"]}",
+      "type": "DocType"
+    }
+  ]
+}

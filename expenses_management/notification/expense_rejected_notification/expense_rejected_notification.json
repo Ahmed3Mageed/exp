@@ -1,0 +1,20 @@
+{
+  "channel": "Email",
+  "creation": "2024-01-09 10:00:00.000000",
+  "doctype": "Notification",
+  "enabled": 1,
+  "is_standard": 1,
+  "message": "Your expense entry {{doc.name}} has been rejected.\n\nAmount: {{doc.currency}} {{doc.amount}}\nRejected by: {{doc.modified_by}}\nRejection Date: {{frappe.utils.now_datetime()}}",
+  "modified": "2024-01-09 10:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Expenses Management",
+  "name": "Expense Rejected Notification",
+  "owner": "Administrator",
+  "subject": "Expense Entry {{doc.name}} Rejected",
+  "value_changed": "",
+  "attach_print": 1,
+  "print_format": "Standard",
+  "document_type": "Expense Entry",
+  "event": "Value Change",
+  "condition": "doc.workflow_state=='Rejected'"
+}

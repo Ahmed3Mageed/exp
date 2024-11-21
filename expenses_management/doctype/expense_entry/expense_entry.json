@@ -1,0 +1,312 @@
+{
+  "actions": [],
+  "creation": "2024-01-09 10:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "expense_id",
+    "posting_date",
+    "expense_type",
+    "amount",
+    "currency",
+    "description",
+    "status",
+    "classification_section",
+    "expense_category",
+    "sub_category",
+    "cost_center",
+    "project",
+    "department",
+    "branch",
+    "location",
+    "financial_details_section",
+    "payment_method",
+    "payment_status",
+    "tax_details",
+    "exchange_rate",
+    "account_code",
+    "budget_reference",
+    "transaction_details_section",
+    "items",
+    "supplier_section",
+    "supplier",
+    "supplier_name",
+    "credit_limit",
+    "payment_terms",
+    "workflow_section",
+    "workflow_state",
+    "approved_by",
+    "approval_date"
+  ],
+  "fields": [
+    {
+      "fieldname": "expense_id",
+      "fieldtype": "Data",
+      "label": "Expense ID",
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "expense_type",
+      "fieldtype": "Link",
+      "label": "Expense Type",
+      "options": "Expense Type",
+      "reqd": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text Editor",
+      "label": "Description"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSubmitted\nApproved\nRejected\nCancelled",
+      "default": "Draft"
+    },
+    {
+      "fieldname": "classification_section",
+      "fieldtype": "Section Break",
+      "label": "Classification"
+    },
+    {
+      "fieldname": "expense_category",
+      "fieldtype": "Link",
+      "label": "Expense Category",
+      "options": "Expense Category"
+    },
+    {
+      "fieldname": "sub_category",
+      "fieldtype": "Link",
+      "label": "Sub Category",
+      "options": "Expense Sub Category"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Department"
+    },
+    {
+      "fieldname": "branch",
+      "fieldtype": "Link",
+      "label": "Branch",
+      "options": "Branch"
+    },
+    {
+      "fieldname": "location",
+      "fieldtype": "Link",
+      "label": "Location",
+      "options": "Location"
+    },
+    {
+      "fieldname": "financial_details_section",
+      "fieldtype": "Section Break",
+      "label": "Financial Details"
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Link",
+      "label": "Payment Method",
+      "options": "Mode of Payment"
+    },
+    {
+      "fieldname": "payment_status",
+      "fieldtype": "Select",
+      "label": "Payment Status",
+      "options": "Unpaid\nPartially Paid\nPaid"
+    },
+    {
+      "fieldname": "tax_details",
+      "fieldtype": "Table",
+      "label": "Tax Details",
+      "options": "Purchase Taxes and Charges"
+    },
+    {
+      "fieldname": "exchange_rate",
+      "fieldtype": "Float",
+      "label": "Exchange Rate",
+      "precision": "4"
+    },
+    {
+      "fieldname": "account_code",
+      "fieldtype": "Link",
+      "label": "Account Code",
+      "options": "Account"
+    },
+    {
+      "fieldname": "budget_reference",
+      "fieldtype": "Link",
+      "label": "Budget Reference",
+      "options": "Budget"
+    },
+    {
+      "fieldname": "transaction_details_section",
+      "fieldtype": "Section Break",
+      "label": "Transaction Details"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Expense Entry Item"
+    },
+    {
+      "fieldname": "supplier_section",
+      "fieldtype": "Section Break",
+      "label": "Supplier Details"
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "options": "Supplier"
+    },
+    {
+      "fieldname": "supplier_name",
+      "fieldtype": "Data",
+      "label": "Supplier Name",
+      "fetch_from": "supplier.supplier_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "credit_limit",
+      "fieldtype": "Currency",
+      "label": "Credit Limit",
+      "fetch_from": "supplier.credit_limit",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payment_terms",
+      "fieldtype": "Link",
+      "label": "Payment Terms",
+      "options": "Payment Terms Template"
+    },
+    {
+      "fieldname": "workflow_section",
+      "fieldtype": "Section Break",
+      "label": "Workflow"
+    },
+    {
+      "fieldname": "workflow_state",
+      "fieldtype": "Link",
+      "label": "Workflow State",
+      "options": "Workflow State",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approval_date",
+      "fieldtype": "Datetime",
+      "label": "Approval Date",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2024-01-09 10:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Expenses Management",
+  "name": "Expense Entry",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "set_user_permissions": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Expense Manager",
+      "permlevel": 0,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "set_user_permissions": 1,
+      "share": 1,
+      "write": 1,
+      "apply_user_permissions": 1
+    },
+    {
+      "role": "Expense Approver",
+      "permlevel": 0,
+      "create": 0,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "apply_user_permissions": 1
+    },
+    {
+      "role": "Expense User",
+      "permlevel": 0,
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 0,
+      "write": 1,
+      "apply_user_permissions": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

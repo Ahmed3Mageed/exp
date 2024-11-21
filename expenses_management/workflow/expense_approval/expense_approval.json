@@ -1,0 +1,80 @@
+{
+  "creation": "2024-01-09 10:00:00.000000",
+  "doctype": "Workflow",
+  "document_type": "Expense Entry",
+  "is_active": 1,
+  "modified": "2024-01-09 10:00:00.000000",
+  "modified_by": "Administrator",
+  "name": "Expense Approval",
+  "owner": "Administrator",
+  "states": [
+    {
+      "allow_edit": "Expense User",
+      "doc_status": 0,
+      "is_optional_state": 0,
+      "message": null,
+      "next_action_email_template": null,
+      "state": "Draft",
+      "update_field": "status",
+      "update_value": "Draft"
+    },
+    {
+      "allow_edit": "Expense Approver",
+      "doc_status": 0,
+      "is_optional_state": 0,
+      "message": "Expense entry is pending approval",
+      "next_action_email_template": "expense_approval_notification",
+      "state": "Pending Approval",
+      "update_field": "status",
+      "update_value": "Submitted"
+    },
+    {
+      "allow_edit": "Expense Manager",
+      "doc_status": 1,
+      "is_optional_state": 0,
+      "message": "Expense entry has been approved",
+      "next_action_email_template": "expense_approved_notification",
+      "state": "Approved",
+      "update_field": "status",
+      "update_value": "Approved"
+    },
+    {
+      "allow_edit": "Expense Manager",
+      "doc_status": 1,
+      "is_optional_state": 0,
+      "message": "Expense entry has been rejected",
+      "next_action_email_template": "expense_rejected_notification",
+      "state": "Rejected",
+      "update_field": "status",
+      "update_value": "Rejected"
+    }
+  ],
+  "transitions": [
+    {
+      "action": "Submit",
+      "allowed": "Expense User",
+      "next_state": "Pending Approval",
+      "state": "Draft"
+    },
+    {
+      "action": "Approve",
+      "allowed": "Expense Approver",
+      "next_state": "Approved",
+      "state": "Pending Approval"
+    },
+    {
+      "action": "Reject",
+      "allowed": "Expense Approver",
+      "next_state": "Rejected",
+      "state": "Pending Approval"
+    },
+    {
+      "action": "Return",
+      "allowed": "Expense Approver",
+      "next_state": "Draft",
+      "state": "Pending Approval"
+    }
+  ],
+  "workflow_name": "Expense Approval",
+  "workflow_state_field": "workflow_state"
+}
